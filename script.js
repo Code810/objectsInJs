@@ -76,38 +76,72 @@
 
 
 //! hometasks 
-//* task1 custom
-let array1=[11,1,4,8,5,6,9,3];
+//? task1 custom
+// let array1=[11,1,4,8,5,6,9,3];
 
-function sortArrayCustom(array){
-    let num=0;
-    for (let i = 0; i < array.length; i++) {
-        for (let j = 0; j < array.length; j++) {
-          if (array[i]>array[j]) {
-              num=array[i];
-              array[i]=array[j];
-              array[j]=num;
-          }
-        }
-      }
-      return array;
-}
-console.log(sortArrayCustom(array1));
+// function sortArrayCustom(array){
+//     let num=0;
+//     for (let i = 0; i < array.length; i++) {
+//         for (let j = 0; j < array.length; j++) {
+//           if (array[i]>array[j]) {
+//               num=array[i];
+//               array[i]=array[j];
+//               array[j]=num;
+//           }
+//         }
+//       }
+//       return array;
+// }
+// console.log(sortArrayCustom(array1));
 
 //* task1 bestpractice
 
-let array2=[11,1,4,8,5,6,9,3];
-array2.sort(function(a, b){return b-a});
-console.log(array2);
-//
-
-//* task2 
-
-let sentence="salam sagol necesen"
+// let array2=[11,1,4,8,5,6,9,3];
+// array2.sort(function(a, b){return b-a});
+// console.log(array2);
 
 
-function getWordsCharsCount(sentence){
-return sentence.split(" ").map(word=>word.length);
+//? task2 
+
+// let sentence="salam sagol necesen"
+
+
+// function getWordsCharsCount(sentence){
+// return sentence.split(" ").map(word=>word.length);
+// }
+
+// console.log(getWordsCharsCount(sentence));
+
+//?task3
+
+const companies=[
+{name: "Company One", category: "Finance", start:1981, end: 2003},
+{name: "Company Two", category: "Retail", start:1992, end: 2008},
+{name: "Company Three", category: "Auto", start:1999, end: 2007},
+{name: "Company Four", category: "Retail", start:1989, end: 2010},
+{name: "Company Five", category: "Technology", start:2009, end: 2014},
+{name: "Company Six", category: "Finance", start:1987, end: 2010},
+{name: "Company Seven", category: "Auto", start:1986, end: 1996},
+{name: "Company Eight", category: "Technology", start:2011, end: 2016},
+{name: "Company Nine", category: "Retail", start:1981, end: 1989},
+]
+const ages=[33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32]
+
+for (let i = 0; i < companies.length; i++) {
+  console.log(companies[i]);
 }
+companies.forEach(company => {
+    console.log(company);
+});
 
-console.log(getWordsCharsCount(sentence));
+let canDrink=ages.filter(age=>age>21);
+console.log(canDrink);
+
+let eightsCompanies= companies.filter(company=> company.start>=1980&& company.end<=1990);
+console.log(eightsCompanies);
+
+let lastedTenYears= companies.filter(company=>  company.end-company.start>=10);
+console.log(lastedTenYears);
+
+const companyNames=companies.map(company=>company.name);
+console.log(companyNames);
